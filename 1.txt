@@ -1,0 +1,58 @@
+
+Parte 2: Frontend – Instalación moderna con Vite + React
+
+1. Crear carpeta base del proyecto frontend
+
+Ubícate en tu directorio de trabajo y crea una carpeta específica para React:
+
+mkdir Recursos-Humanos-App
+cd Recursos-Humanos-App
+
+Este será el contenedor del frontend que se conectará a tu backend Spring Boot.
+
+2. Crear aplicación React con Vite
+
+npm create vite@latest . -- --template react
+
+El punto . indica que la instalación será en la carpeta actual. Acepta cualquier pregunta que aparezca durante el proceso.
+
+3. Instalar dependencias
+
+npm install
+
+Esto descargará todas las dependencias necesarias para React y Vite.
+
+4. Iniciar el servidor de desarrollo
+
+npm run dev
+
+Esto lanzará tu aplicación en:
+http://localhost:5173
+
+Este es el puerto por defecto usado por Vite.
+
+5. Configurar Spring Boot para aceptar peticiones desde React
+
+En tus controladores Spring, añade:
+
+@CrossOrigin(origins = "http://localhost:5173")
+
+Esto permite que React (frontend) se comunique con Spring Boot (backend) sin errores CORS mientras desarrollas localmente.
+
+6. Verifica la estructura generada
+
+Dentro de la carpeta src de tu nuevo proyecto, verás:
+
+src/
+- App.jsx
+- main.jsx
+- assets/
+- index.css
+
+Este es el punto de partida para desarrollar los componentes de tu aplicación.
+
+7. Recomendaciones adicionales
+
+- Ejecuta npm install axios para comunicarte con el backend REST.
+- Usa carpetas separadas para componentes y servicios desde el inicio.
+- Considera agregar Bootstrap o Tailwind CSS si deseas estilos rápidos.
